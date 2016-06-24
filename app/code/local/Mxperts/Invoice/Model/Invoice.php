@@ -56,6 +56,9 @@ class Mxperts_Invoice_Model_Invoice extends Mage_Payment_Model_Method_Abstract
             		Mage::getModel('core/resource_transaction')->addObject($invoice)->addObject($invoice->getOrder())->save();
               	$order->addRelatedObject($invoice);
               	
+              	// Invoice State
+              	$invoice->setState((int)$this->getConfigData('invoice_state'));              	
+              	
                 //if option send Email is activated in backend
                 if ((int)$this->getConfigData('send_invoice_email') == 1) 
                 {

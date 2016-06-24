@@ -16,4 +16,9 @@
 "Total amount of orders (in the past) needed for the customer to use this payment method","Mindestbetrag abgeschlossener Aufträge, die der Kunde benötigt, um diese Zahlungsmethode wählen zu können"
 "Minimum count of orders (in the past) needed for the customer to use this payment method","Mindestanzahl abgeschlossener Aufträge, die der Kunde benötigt, um diese Zahlungsmethode wählen zu können"
 "Create Invoice after successful transaction", "Rechnung nach erfolgreicher Auftragserstellung erstellen"
+"Open","Offen"
+"Paid","Bezahlt"
+"Invoice State"
+"Invoice State","Rechnungs-Status"
+"invoice state after order is placed (if <b>"Create Invoice"</b>> is activated)","Rechnungstatus nach erfolgtem Auftrag (Falls <b>"Rechnung erstellen"</b>> aktiviert ist)"
 

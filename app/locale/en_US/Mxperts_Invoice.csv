@@ -16,4 +16,8 @@
 "Total amount of orders (in the past) needed for the customer to use this payment method","Total amount of orders (in the past) needed for the customer to use this payment method"
 "Minimum count of orders (in the past) needed for the customer to use this payment method","Minimum count of orders (in the past) needed for the customer to use this payment method"
 "Create Invoice after successful transaction", "Create Invoice after successful transaction"
+"Open","Open"
+"Paid","Paid"
+"Invoice State","Invoice State"
+"invoice state after order is placed (if <b>"Create Invoice"</b>> is activated)","invoice state after order is placed (if <b>"Create Invoice"</b>> is activated)"
 
