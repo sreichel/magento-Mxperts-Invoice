@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category Mxperts
+ * @package Mxperts_Invoice
+ * @authors TMEDIA cross communications <info@tmedia.de>, Johannes Teitge <teitge@tmedia.de>, Igor Jankovic <jankovic@tmedia.de>, Daniel Sasse <d.sasse1984@googlemail.com>
+ * @copyright TMEDIA cross communications, Doris Teitge-Seifert
+ * @license http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+
+<config>
+   <sections>
+        <!-- Backend TAB payment -->   
+        <payment>
+            <groups>
+                <!-- invoice Fieldset -->            
+                <invoice translate="label" module="payment">
+                    <!-- Titel im Backend -->                
+                    <label>Invoice</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>0</sort_order>
+                    <!-- In der Standarkonfiguration anzeigen -->                    
+                    <show_in_default>1</show_in_default>
+                    <!-- In der Websitekonfiguration anzeigen -->                    
+                    <show_in_website>1</show_in_website>
+                    <!-- Nicht in der Storekonfiguration anzeigen -->
+                    <show_in_store>0</show_in_store>
+                    
+                    <!-- Nun folgend die Definition der Backend-Eingabefelder -->                    
+                    <fields>
+                    
+                        <note translate="label">
+                            <label></label>
+                            <frontend_type>note</frontend_type>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[
+                            <a href="http://www.mxperts.de" target="_blank"><IMG border="0" src="http://www.mxperts.de/mxperts.jpg"></a>
+                            
+                            <div style=""><b>Invoice Payment-Module</b> <a href="http://www.mxperts.de" target="_blank">www.mxperts.de</a></div>
+                            <div style="margin-top:4px;"><b>TMEDIA cross communications, <a href="mailto:info@tmedia.de">info@tmedia.de</a></b><br> 
+                            Johannes Teitge, Daniel Sasse, Igor Jankovic<br></div>                     
+                            
+                            <div style="margin-top:4px;"><b>Sponsored by:</b>&nbsp;<a href="http://www.switzerlandshop.com" target="_blank">www.switzerlandshop.com</a></div>
+                            
+                                                        
+                            ]]></comment>                            
+                        </note>
+                    
+                    
+                        <!-- Status des Moduls -->                    
+                        <active translate="label">
+                            <!-- Bezeichnung des Eingabefeldes -->                        
+                            <label>Enabled</label>
+                            <!-- Eingabetyp (text,select,mutliselect, text, texarea, etc...) -->                            
+                            <frontend_type>select</frontend_type>
+                            <!-- Model welches die Inhalte der Auswahl liefert -->                            
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <!-- Position im Backend -->                            
+                            <sort_order>0</sort_order>
+                            <!-- Kommentar -->
+                            <comment><![CDATA[<b>Aktivieren</b> oder <b>Deaktivieren</b> des Moduls.]]></comment>
+                            <!-- Anzeige der jeweiligen Konfig.-Bereiches -->                                                                                    
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+                        
+                        <!-- Bezeichnung im Frontent -->                        
+                        <title translate="label">
+                            <label>Title</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </title>
+                        
+                        <!-- Auftragsstatus nach der Bestellung -->                        
+                        <order_status translate="label">
+                            <label>New order status</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_order_status</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </order_status>
+                        
+                        <!-- Position des Moduls im Backend -->                        
+                        <sort_order translate="label">
+                            <label>Sort order</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </sort_order>
+                        
+                        
+                        <!-- Erlaubte Kundengruppen -->                        
+                        <customergroups translate="label comment">
+	                            <label>Customer Group(s)</label>
+	                            <frontend_type>multiselect</frontend_type>
+	                            <source_model>invoice/source_customergroups</source_model>
+	                            <sort_order>4</sort_order>	                            	                            
+                              <comment><![CDATA[W&auml;hlen Sie die Kundengruppe(n) aus, welche die Zahlungsmethode Rechnung benutzen darf.]]></comment>                              	                            
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                      </customergroups>                           
+                        
+                        
+                        <!-- Aktivierung fuer Laenderspezifizierung -->                        
+                        <allowspecific translate="label">
+                            <label>Payment from applicable countries</label>
+                            <frontend_type>allowspecific</frontend_type>
+                            <sort_order>5</sort_order>
+                            <source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[<b>Bestimmte L&auml;nder</b> ausw&auml;hlen um das Modul auf bestimmte L&auml;nder zu begrenzen.]]></comment>                            
+                        </allowspecific>
+                        
+                        <!-- Laenderauswahl -->                        
+                        <specificcountry translate="label">
+                            <label>Payment from Specific countries</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <sort_order>6</sort_order>
+                            <source_model>adminhtml/system_config_source_country</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </specificcountry>
+                        
+                        <!-- Infotext Checkout -->                        
+                        <infotext_checkout translate="label">
+                            <label>Infotext Checkout</label>
+                            <frontend_type>textarea</frontend_type>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Informationstext der nach <b>Auswahl der Zahlungsmethode</b> erscheint]]></comment>                            
+                        </infotext_checkout>
+                        
+                        <!-- Infotext Overview -->                        
+                        <infotext_overview translate="label">
+                            <label>Infotext Overview</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>8</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <comment><![CDATA[Informationstext der in der <b>&Uuml;bersicht</b> erscheint.]]></comment>                            
+                        </infotext_overview>                                                
+                                                                                                                      
+                    </fields>
+                </invoice>
+            </groups>
+        </payment>
+    </sections>
+</config>
