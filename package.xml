@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
     <name>Mxperts_Invoice</name>
-    <version>1.0.2</version>
-    <stability>beta</stability>
+    <version>1.0.4</version>
+    <stability>stable</stability>
     <license>GPL</license>
     <channel>community</channel>
     <extends/>
@@ -10,9 +10,9 @@
     <description>Zahlungsart Rechnung mit Beschr&#xE4;nkung nach Kundengruppen - Payment Method Invoice with limitation on the customer group.</description>
     <notes>none</notes>
     <authors><author><name>Johannes Teitge</name><user>auto-converted</user><email>teitge@tmedia.de</email></author><author><name>Daniel Sasse</name><user>auto-converted</user><email>d.sasse1984@googlemail.com</email></author><author><name>Igor Jankovic</name><user>auto-converted</user><email>jankovic@tmedia.de</email></author></authors>
-    <date>2009-07-25</date>
-    <time>09:55:40</time>
-    <contents><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="invoice"><file name="info.phtml" hash="8a510117b199a7a649c6d2baf9f19e1b"/></dir></dir></dir></dir></dir><dir name="frontend"><dir name="default"><dir name="default"><dir name="template"><dir name="invoice"><file name="form.phtml" hash="1f0b697d7fb0c9ba22ec7731e21874be"/><file name="info.phtml" hash="f82c16c4685de6141429a536cf2d605c"/></dir></dir></dir></dir></dir></target><target name="magelocale"><dir name="de_DE"><file name="Mxperts_Invoice.csv" hash="414fd7dfb3c7653006ddc33bb16eaf94"/></dir><dir name="en_US"><file name="Mxperts_Invoice.csv" hash="34fbe6205d51f12dd780cfa16c1c6621"/></dir></target><target name="mageetc"><dir name="modules"><file name="Mxperts_Invoice.xml" hash="d650d2a98ff0fd78bb01b6f1e1d1b03d"/></dir></target><target name="magelocal"><dir name="Mxperts"><dir name="Invoice"><dir name="Block"><file name="Form.php" hash="562c233a13aa0f7af3674c548a3d3531"/><file name="Info.php" hash="616c9587a5e80209ff165da0a425dad6"/></dir><dir name="etc"><file name="config.xml" hash="0da34fda8edb6d4ce08b2da05e050792"/><file name="system.xml" hash="6b67132e05827b540ddfd14cf0d151e4"/></dir><dir name="Helper"><file name="Data.php" hash="7daf581b1c3c62a975760d299533662a"/></dir><dir name="Model"><dir name="Source"><file name="Customergroups.php" hash="a681df2ee4f70c5926ae38ff4314409d"/></dir><file name="Invoice.php" hash="d43eb6c44c682df442e807faf24108cb"/></dir><dir name="sql"><dir name="mxperts_invoice_setup"><file name="mysql4-install-0.1.0.php" hash="d47d4e205de519908c6dc0f223563b33"/></dir></dir></dir></dir></target></contents>
+    <date>2009-10-02</date>
+    <time>14:55:13</time>
+    <contents><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="template"><dir name="invoice"><file name="form.phtml" hash="685aa62d9ce5bceee8e7d4f3872e6158"/><file name="info.phtml" hash="8a510117b199a7a649c6d2baf9f19e1b"/></dir></dir></dir></dir></dir><dir name="frontend"><dir name="default"><dir name="default"><dir name="template"><dir name="invoice"><file name="form.phtml" hash="1f0b697d7fb0c9ba22ec7731e21874be"/><file name="info.phtml" hash="f82c16c4685de6141429a536cf2d605c"/></dir></dir></dir></dir></dir></target><target name="magelocale"><dir name="de_DE"><file name="Mxperts_Invoice.csv" hash="414fd7dfb3c7653006ddc33bb16eaf94"/></dir><dir name="en_US"><file name="Mxperts_Invoice.csv" hash="34fbe6205d51f12dd780cfa16c1c6621"/></dir></target><target name="mageetc"><dir name="modules"><file name="Mxperts_Invoice.xml" hash="c105e253e29753bb2f746ac014ee3987"/></dir></target><target name="magelocal"><dir name="Mxperts"><dir name="Invoice"><dir name="Block"><file name="Form.php" hash="562c233a13aa0f7af3674c548a3d3531"/><file name="Info.php" hash="616c9587a5e80209ff165da0a425dad6"/></dir><dir name="etc"><file name="config.xml" hash="0da34fda8edb6d4ce08b2da05e050792"/><file name="system.xml" hash="6b67132e05827b540ddfd14cf0d151e4"/></dir><dir name="Helper"><file name="Data.php" hash="7daf581b1c3c62a975760d299533662a"/></dir><dir name="Model"><dir name="Source"><file name="Customergroups.php" hash="a681df2ee4f70c5926ae38ff4314409d"/></dir><file name="Invoice.php" hash="17c2568dd915fc5231d7dc4c2d888bfc"/></dir><dir name="sql"><dir name="mxperts_invoice_setup"><file name="mysql4-install-0.1.0.php" hash="d47d4e205de519908c6dc0f223563b33"/></dir></dir></dir></dir></target></contents>
     <compatible/>
     <dependencies/>
 </package>

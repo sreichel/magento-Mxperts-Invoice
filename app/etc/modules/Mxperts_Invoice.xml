@@ -20,7 +20,7 @@
                 <Mage_Payment />
             </depends>
             <!-- Versionierung, Wichtig fuer Datenbankupdates!!!  -->            
-            <version>1.0.2</version>
+            <version>1.0.4</version>
         </Mxperts_Invoice>
     </modules>
 </config>

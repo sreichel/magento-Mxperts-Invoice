@@ -16,7 +16,7 @@ class Mxperts_Invoice_Model_Invoice extends Mage_Payment_Model_Method_Abstract
     protected $_canCapturePartial       = false;
     protected $_canRefund               = false;
     protected $_canVoid                 = false;
-    protected $_canUseInternal          = false;
+    protected $_canUseInternal          = true;
     protected $_canUseCheckout          = true;
     protected $_canUseForMultishipping  = true;
 
@@ -58,6 +58,7 @@ class Mxperts_Invoice_Model_Invoice extends Mage_Payment_Model_Method_Abstract
     public function canUseCheckout()
     {
         $canUse = true;
+        
 	      if($this->getConfigData('customergroups') != '') { 
           $customer_groups = explode(',',$this->getConfigData('customergroups'));
           $activecustomer_groups_id = $this->getCurrentCustomerGroup(); 
@@ -65,6 +66,7 @@ class Mxperts_Invoice_Model_Invoice extends Mage_Payment_Model_Method_Abstract
             $canUse = false;
           }        
         }
+        
         return $canUse; 	    
 	  }                        
 }
