@@ -62,7 +62,7 @@
                             <!-- Position im Backend -->                            
                             <sort_order>0</sort_order>
                             <!-- Kommentar -->
-                            <comment><![CDATA[<b>Aktivieren</b> oder <b>Deaktivieren</b> des Moduls.]]></comment>
+                            <comment><![CDATA[]]></comment>
                             <!-- Anzeige der jeweiligen Konfig.-Bereiches -->                                                                                    
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -107,7 +107,7 @@
 	                            <frontend_type>multiselect</frontend_type>
 	                            <source_model>invoice/source_customergroups</source_model>
 	                            <sort_order>4</sort_order>	                            	                            
-                              <comment><![CDATA[W&auml;hlen Sie die Kundengruppe(n)) aus, welche Zahlungsmethode Rechnung benutzen darf.]]></comment>                              	                            
+                              <comment><![CDATA[Select customer group(s) allowed to use this payment method]]></comment>                              	                            
 	                            <show_in_default>1</show_in_default>
 	                            <show_in_website>1</show_in_website>
 	                            <show_in_store>1</show_in_store>
@@ -119,7 +119,7 @@
 	                            <label>Orders count</label>
 	                            <frontend_type>text</frontend_type>
 	                            <sort_order>5</sort_order>	                            	                            
-                              <comment><![CDATA[Rechnung nur, wenn X Aufträge abgeschlossen sind.]]></comment>                              	                            
+                              <comment><![CDATA[Minimum count of orders (in the past) needed for the customer to use this payment method]]></comment>                              	                            
 	                            <show_in_default>1</show_in_default>
 	                            <show_in_website>1</show_in_website>
 	                            <show_in_store>1</show_in_store>
@@ -131,7 +131,7 @@
 	                            <label>Orders amount</label>
 	                            <frontend_type>text</frontend_type>
 	                            <sort_order>6</sort_order>	                            	                            
-                              <comment><![CDATA[Rechnung nur, wenn Mindestbetrag X an Aufträgen abgeschlossen ist.]]></comment>                              	                            
+                              <comment><![CDATA[Total amount of orders (in the past) needed for the customer to use this payment method]]></comment>                              	                            
 	                            <show_in_default>1</show_in_default>
 	                            <show_in_website>1</show_in_website>
 	                            <show_in_store>1</show_in_store>
@@ -143,7 +143,7 @@
 	                            <label>Minimum amount</label>
 	                            <frontend_type>text</frontend_type>
 	                            <sort_order>7</sort_order>	                            	                            
-                              <comment><![CDATA[Mindestbestellwert für die Zahlart Rechnung]]></comment>                              	                            
+                              <comment><![CDATA[Minimum amount to use this payment method]]></comment>                              	                            
 	                            <show_in_default>1</show_in_default>
 	                            <show_in_website>1</show_in_website>
 	                            <show_in_store>1</show_in_store>
@@ -155,7 +155,7 @@
 	                            <label>Maximum amount</label>
 	                            <frontend_type>text</frontend_type>
 	                            <sort_order>8</sort_order>	                            	                            
-                              <comment><![CDATA[Maximaler Bestellwert für die Zahlart Rechnung]]></comment>                              	                            
+                              <comment><![CDATA[Maximum allowed amount for this payment method]]></comment>                              	                            
 	                            <show_in_default>1</show_in_default>
 	                            <show_in_website>1</show_in_website>
 	                            <show_in_store>1</show_in_store>
@@ -174,7 +174,7 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
-                            <comment><![CDATA[<b>Bestimmte L&auml;nder</b> ausw&auml;hlen um das Modul auf bestimmte L&auml;nder zu begrenzen.]]></comment>                            
+                            <comment><![CDATA[Select countries allowed to use this payment method]]></comment>                            
                         </allowspecific>
                         
                         <!-- Laenderauswahl -->                        
@@ -189,28 +189,48 @@
                         </specificcountry>
                         
                         <!-- Infotext Checkout -->                        
-                        <infotext_checkout translate="label">
+                        <infotext_checkout translate="label comment">
                             <label>Infotext Checkout</label>
                             <frontend_type>textarea</frontend_type>
                             <sort_order>11</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
-                            <comment><![CDATA[Informationstext der nach <b>Auswahl der Zahlungsmethode</b> erscheint]]></comment>                            
+                            <comment><![CDATA[Infotext after selection of the payment method]]></comment>                            
                         </infotext_checkout>
                         
                         <!-- Infotext Overview -->                        
-                        <infotext_overview translate="label">
+                        <infotext_overview translate="label comment">
                             <label>Infotext Overview</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>12</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
-                            <comment><![CDATA[Informationstext der in der <b>&Uuml;bersicht</b> erscheint.]]></comment>                            
-                        </infotext_overview>                                                
-                                                
-                                                                                              
+                            <comment><![CDATA[Infotext visible on the overview]]></comment>                            
+                        </infotext_overview>
+                                                                        
+                        <create_invoice translate="label comment">
+							              <label>Create Invoice</label> 
+							              <frontend_type>select</frontend_type> 
+							              <source_model>adminhtml/system_config_source_yesno</source_model> 
+							              <sort_order>13</sort_order> 
+							              <show_in_default>1</show_in_default> 
+							              <show_in_website>1</show_in_website> 
+							              <show_in_store>0</show_in_store>                             
+                            <comment><![CDATA[Create Invoice after successful transaction]]></comment>							              
+						            </create_invoice>
+						            
+                        <send_invoice_email translate="label">
+							              <label>Invoice E-Mail</label> 
+							              <frontend_type>select</frontend_type> 
+							              <source_model>adminhtml/system_config_source_yesno</source_model> 
+							              <sort_order>14</sort_order> 
+							              <show_in_default>1</show_in_default> 
+							              <show_in_website>1</show_in_website> 
+							              <show_in_store>0</show_in_store> 
+						            </send_invoice_email>						            						        
+                        
                     </fields>
                 </invoice>
             </groups>

@@ -12,7 +12,7 @@ class Mxperts_Invoice_Model_Invoice extends Mage_Payment_Model_Method_Abstract
 
     protected $_isGateway               = false;
     protected $_canAuthorize            = false;
-    protected $_canCapture              = false;
+    protected $_canCapture              = true;
     protected $_canCapturePartial       = false;
     protected $_canRefund               = false;
     protected $_canVoid                 = false;
@@ -32,14 +32,42 @@ class Mxperts_Invoice_Model_Invoice extends Mage_Payment_Model_Method_Abstract
            
 	  // Kundengruppe des aktuellen Users auslesen
     public function getCurrentCustomerGroup()
-	  {
+	  {  
 		  $session = Mage::getSingleton('customer/session');
 		  if (! $session->isLoggedIn()) $customer_group_id = Mage_Customer_Model_Group::NOT_LOGGED_IN_ID;
 		  else $customer_group_id = $session->getCustomerGroupId();
 		  return $customer_group_id;		
 	  }             
            
+       
+     public function authorize(Varien_Object $payment, $amount)
+    {
+        // If invoice enabled in backend 
+        if ((int)$this->getConfigData('create_invoice') == '1') 
+        {
+      	    $order = $payment->getOrder();
+        	  $real_order_id	= $payment->getOrder()->getRealOrderId();
+        	  $order->loadByIncrementId($real_order_id);			   
            
+		       if ($order->canInvoice())
+           {			
+              	$invoice = $order->prepareInvoice();
+            		$invoice->register()->capture();
+            		Mage::getModel('core/resource_transaction')->addObject($invoice)->addObject($invoice->getOrder())->save();
+              	$order->addRelatedObject($invoice);
+              	
+                //if option send Email is activated in backend
+                if ((int)$this->getConfigData('send_invoice_email') == 1) 
+                {
+                  $order->sendNewOrderEmail(); 
+                }                                                             
+              	
+           }
+
+        }
+        return $this;
+    }
+        
 
     // Ausgabe des Titels aus dem Backend
     public function getCODTitle()

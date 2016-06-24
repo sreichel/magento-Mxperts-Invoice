@@ -95,6 +95,7 @@
                 <model>invoice/invoice</model>
                 <order_status>1</order_status>
                 <title>Rechnung</title>
+               <payment_action>authorize</payment_action>       
                 <allowspecific>0</allowspecific>
                 <orderscount>0</orderscount>
                 <ordersamount>0</ordersamount>
