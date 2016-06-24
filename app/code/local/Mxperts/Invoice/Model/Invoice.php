@@ -9,6 +9,17 @@
 
 class Mxperts_Invoice_Model_Invoice extends Mage_Payment_Model_Method_Abstract
 {
+
+    protected $_isGateway               = false;
+    protected $_canAuthorize            = false;
+    protected $_canCapture              = false;
+    protected $_canCapturePartial       = false;
+    protected $_canRefund               = false;
+    protected $_canVoid                 = false;
+    protected $_canUseInternal          = false;
+    protected $_canUseCheckout          = true;
+    protected $_canUseForMultishipping  = true;
+
     // Eindeutiger Bezeichner
     protected $_code = 'invoice';
     
@@ -32,6 +43,11 @@ class Mxperts_Invoice_Model_Invoice extends Mage_Payment_Model_Method_Abstract
     {
         return $this->getConfigData('title');
     } 
+    
+    public function getPaymentMethodType()
+    {
+        return $this->_paymentMethod;
+    }    
     
     // Ausgabe von Daten aus dem Backend
     public function getInfoText($fieldname)

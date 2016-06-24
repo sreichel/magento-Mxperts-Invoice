@@ -27,7 +27,7 @@
                     <!-- Nicht in der Storekonfiguration anzeigen -->
                     <show_in_store>0</show_in_store>
                     
-                    <!-- Nun folgend die Definition der Backend-Eingabefelder -->                    
+                    <!-- Nun folgend die Defenition der Backend-Eingabefelder -->                    
                     <fields>
                     
                         <note translate="label">
@@ -57,7 +57,7 @@
                             <label>Enabled</label>
                             <!-- Eingabetyp (text,select,mutliselect, text, texarea, etc...) -->                            
                             <frontend_type>select</frontend_type>
-                            <!-- Model welches die Inhalte der Auswahl liefert -->                            
+                            <!-- Model welches die Inhalte dere Auswahl liefert -->                            
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <!-- Position im Backend -->                            
                             <sort_order>0</sort_order>
@@ -107,7 +107,7 @@
 	                            <frontend_type>multiselect</frontend_type>
 	                            <source_model>invoice/source_customergroups</source_model>
 	                            <sort_order>4</sort_order>	                            	                            
-                              <comment><![CDATA[W&auml;hlen Sie die Kundengruppe(n) aus, welche die Zahlungsmethode Rechnung benutzen darf.]]></comment>                              	                            
+                              <comment><![CDATA[W&auml;hlen Sie die Kundengruppe(n)) aus, welche Zahlungsmethode Rechnung benutzen darf.]]></comment>                              	                            
 	                            <show_in_default>1</show_in_default>
 	                            <show_in_website>1</show_in_website>
 	                            <show_in_store>1</show_in_store>
@@ -145,7 +145,7 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
-                            <comment><![CDATA[Informationstext der nach <b>Auswahl der Zahlungsmethode</b> erscheint]]></comment>                            
+                            <comment><![CDATA[Informationstext der nach <b>Auswahl der Zahlungsmethode</b>> erscheint]]></comment>                            
                         </infotext_checkout>
                         
                         <!-- Infotext Overview -->                        
@@ -156,9 +156,10 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
-                            <comment><![CDATA[Informationstext der in der <b>&Uuml;bersicht</b> erscheint.]]></comment>                            
+                            <comment><![CDATA[Informationstext der in der <b>&uuml;bersicht</b> erscheint.]]></comment>                            
                         </infotext_overview>                                                
-                                                                                                                      
+                                                
+                                                                                              
                     </fields>
                 </invoice>
             </groups>

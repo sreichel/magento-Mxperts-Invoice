@@ -3,7 +3,7 @@
 /**
  * @category Mxperts
  * @package Mxperts_Invoice
- * @authors TMEDIA cross communications <info@tmedia.de>, Johannes Teitge <teitge@tmedia.de>, Igor Jankovic <jankovic@tmedia.de>, Daniel Sasse <d.sasse1984@googlemail.com>
+ * @author TMEDIA cross communications <info@tmedia.de>, Johannes Teitge <teitge@tmedia.de>, Daniel Sasse <d.sasse1984@googlemail.com>
  * @copyright TMEDIA cross communications, Doris Teitge-Seifert
  * @license http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  */
@@ -19,18 +19,23 @@
             </invoice>     
         </models>
         
+        <helpers>
+	        <invoice>
+            <class>Mxperts_Invoice_Helper</class>
+		      </invoice>
+	      </helpers>
+        
         <blocks>
             <invoice>
                <class>Mxperts_Invoice_Block</class>
             </invoice>
-         </blocks>         
-        
+        </blocks>                
         
 
 <!-- Definition der Ressourcen  -->
         <resources>
 
-<!-- Setup,Write,Read Ressourcen definieren. (Nur Core-Funktionen) -->        
+<!-- Setup,Write,Read Ressourcen definbieren. (Nur Core-Funktionen) -->        
             <invoice_setup>
                 <setup>
 <!-- Modul welches verwendet werden soll -->                
@@ -50,6 +55,7 @@
             </invoice_read>
             
         </resources>
+        
         
     </global> 
     

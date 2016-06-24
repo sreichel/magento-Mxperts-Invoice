@@ -13,4 +13,10 @@ class Mxperts_Invoice_Block_Info extends Mage_Payment_Block_Info
         parent::_construct();
         $this->setTemplate('invoice/info.phtml');
     }
+    
+    public function getMethodCode()
+    {
+        return $this->getInfo()->getMethodInstance()->getCode();
+    }    
+    
 }
