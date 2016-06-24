@@ -18,7 +18,7 @@ class Mxperts_Invoice_Model_Invoice extends Mage_Payment_Model_Method_Abstract
     protected $_canVoid                 = false;
     protected $_canUseInternal          = true;
     protected $_canUseCheckout          = true;
-    protected $_canUseForMultishipping  = true;
+    protected $_canUseForMultishipping  = false;
 
     // Eindeutiger Bezeichner
     protected $_code = 'invoice';
@@ -26,6 +26,9 @@ class Mxperts_Invoice_Model_Invoice extends Mage_Payment_Model_Method_Abstract
     // Klassen fuer unsere Blocks/Templates
     protected $_formBlockType = 'invoice/form';
     protected $_infoBlockType = 'invoice/info';
+    
+    protected $_orders = null;    
+    protected $_amount = 0;    
            
 	  // Kundengruppe des aktuellen Users auslesen
     public function getCurrentCustomerGroup()
@@ -55,6 +58,46 @@ class Mxperts_Invoice_Model_Invoice extends Mage_Payment_Model_Method_Abstract
         return $this->getConfigData($fieldname);
     }
 
+    public function initOrders() {
+        $this->_orders = Mage::getResourceModel('sales/order_collection')
+            ->addAttributeToSelect('*')
+            ->joinAttribute('shipping_firstname', 'order_address/firstname', 'shipping_address_id', null, 'left')
+            ->joinAttribute('shipping_lastname', 'order_address/lastname', 'shipping_address_id', null, 'left')            
+            ->addAttributeToFilter('customer_id', Mage::getSingleton('customer/session')->getCustomer()->getId())
+            ->addAttributeToFilter('status', Mage_Sales_Model_Order::STATE_COMPLETE)            
+            ->addAttributeToFilter('state', array('in' => Mage::getSingleton('sales/order_config')->getVisibleOnFrontStates()))            
+            ->addAttributeToSort('created_at', 'desc')
+   //         ->setPageSize('5')
+            ->load();    
+    }
+    
+    public function initAmount() {
+      $sess = Mage::getSingleton('checkout/session');
+      $items = $sess->getQuote()->getItemsCollection()->getItems();    
+      $value = 0;        
+      foreach($items as $item) {
+        $value += $item->getCalculationPrice() * $item->getQty();       
+        $value += $item->getTaxAmount();          
+      }
+      $this->_amount = $value; 
+    }
+    
+    
+    public function ordersCount() {
+      return count($this->_orders);
+    }
+    
+    public function ordersValue() {
+      $total = 0;    
+      
+      if (count($this->_orders) > 0) {      
+        foreach($this->_orders as $order) {
+          $total += $order->getbase_subtotal();
+        }
+      }
+      return $total;
+    }      
+
     public function canUseCheckout()
     {
         $canUse = true;
@@ -66,6 +109,29 @@ class Mxperts_Invoice_Model_Invoice extends Mage_Payment_Model_Method_Abstract
             $canUse = false;
           }        
         }
+        
+        if ($canUse):       
+          $this->initOrders();                  
+          $canUse = ( $this->ordersCount() >= (int)$this->getConfigData('orderscount') );          
+        endif;               
+        
+        if ($canUse):
+          $canUse = ( $this->ordersValue() >= (float)$this->getConfigData('ordersamount') );
+        endif;
+        
+        if ($canUse):
+          $this->initAmount(); 
+          if ((int)$this->getConfigData('minamount') > 0) {      
+          $canUse = ( $this->_amount >= (float)$this->getConfigData('minamount') );
+          }
+        endif;
+        
+        if ($canUse): 
+          if ((int)$this->getConfigData('maxamount') > 0) {      
+          $canUse = ( $this->_amount < (float)$this->getConfigData('maxamount') );
+          }
+        endif;
+          
         
         return $canUse; 	    
 	  }                        

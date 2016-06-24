@@ -96,6 +96,10 @@
                 <order_status>1</order_status>
                 <title>Rechnung</title>
                 <allowspecific>0</allowspecific>
+                <orderscount>0</orderscount>
+                <ordersamount>0</ordersamount>
+                <minamount>0</minamount>
+                <maxamount>0</maxamount>                
             </invoice>
          </payment>
     </default>

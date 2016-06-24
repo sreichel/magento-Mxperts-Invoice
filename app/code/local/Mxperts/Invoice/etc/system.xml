@@ -111,14 +111,65 @@
 	                            <show_in_default>1</show_in_default>
 	                            <show_in_website>1</show_in_website>
 	                            <show_in_store>1</show_in_store>
-	                      </customergroups>                           
+	                      </customergroups>
+                        
+                        
+                        <!-- Mindestanzahl abgeschlossener Aufträge -->                        
+                        <orderscount translate="label comment">
+	                            <label>Orders count</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>5</sort_order>	                            	                            
+                              <comment><![CDATA[Rechnung nur, wenn X Aufträge abgeschlossen sind.]]></comment>                              	                            
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                      </orderscount>
+                        
+                        
+                        <!-- Mindestbetrag abgeschlossener Aufträge -->                        
+                        <ordersamount translate="label comment">
+	                            <label>Orders amount</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>6</sort_order>	                            	                            
+                              <comment><![CDATA[Rechnung nur, wenn Mindestbetrag X an Aufträgen abgeschlossen ist.]]></comment>                              	                            
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                      </ordersamount>
+                        
+                        
+                        <!-- Mindestbestellwert für Rechnung -->                        
+                        <minamount translate="label comment">
+	                            <label>Minimum amount</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>7</sort_order>	                            	                            
+                              <comment><![CDATA[Mindestbestellwert für die Zahlart Rechnung]]></comment>                              	                            
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                      </minamount>
+                        
+                        
+                        <!-- Maximaler Bestellwert für Rechnung -->                        
+                        <maxamount translate="label comment">
+	                            <label>Maximum amount</label>
+	                            <frontend_type>text</frontend_type>
+	                            <sort_order>8</sort_order>	                            	                            
+                              <comment><![CDATA[Maximaler Bestellwert für die Zahlart Rechnung]]></comment>                              	                            
+	                            <show_in_default>1</show_in_default>
+	                            <show_in_website>1</show_in_website>
+	                            <show_in_store>1</show_in_store>
+	                      </maxamount>                                                   
+                                                                           
+                                                                           
+                                                                           
                         
                         
                         <!-- Aktivierung fuer Laenderspezifizierung -->                        
                         <allowspecific translate="label">
                             <label>Payment from applicable countries</label>
                             <frontend_type>allowspecific</frontend_type>
-                            <sort_order>5</sort_order>
+                            <sort_order>9</sort_order>
                             <source_model>adminhtml/system_config_source_payment_allspecificcountries</source_model>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -130,7 +181,7 @@
                         <specificcountry translate="label">
                             <label>Payment from Specific countries</label>
                             <frontend_type>multiselect</frontend_type>
-                            <sort_order>6</sort_order>
+                            <sort_order>10</sort_order>
                             <source_model>adminhtml/system_config_source_country</source_model>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
@@ -141,22 +192,22 @@
                         <infotext_checkout translate="label">
                             <label>Infotext Checkout</label>
                             <frontend_type>textarea</frontend_type>
-                            <sort_order>7</sort_order>
+                            <sort_order>11</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
-                            <comment><![CDATA[Informationstext der nach <b>Auswahl der Zahlungsmethode</b>> erscheint]]></comment>                            
+                            <comment><![CDATA[Informationstext der nach <b>Auswahl der Zahlungsmethode</b> erscheint]]></comment>                            
                         </infotext_checkout>
                         
                         <!-- Infotext Overview -->                        
                         <infotext_overview translate="label">
                             <label>Infotext Overview</label>
                             <frontend_type>text</frontend_type>
-                            <sort_order>8</sort_order>
+                            <sort_order>12</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>0</show_in_store>
-                            <comment><![CDATA[Informationstext der in der <b>&uuml;bersicht</b> erscheint.]]></comment>                            
+                            <comment><![CDATA[Informationstext der in der <b>&Uuml;bersicht</b> erscheint.]]></comment>                            
                         </infotext_overview>                                                
                                                 
                                                                                               
