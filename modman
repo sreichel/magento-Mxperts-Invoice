@@ -1,0 +1,6 @@
+app/code/local/Mxperts/Invoice                              app/code/local/Mxperts/Invoice/
+app/design/adminhtml/default/default/template/invoice       app/design/adminhtml/default/default/template/invoice
+app/design/frontend/default/default/template/invoice        app/design/frontend/default/default/template/invoice
+app/locale/de_DE/*                                          app/locale/de_DE/
+app/locale/en_US/*                                          app/locale/en_US/
+app/etc/modules/Mxperts_Invoice.xml                         app/etc/modules/Mxperts_Invoice.xml

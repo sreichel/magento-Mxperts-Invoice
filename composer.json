@@ -1,0 +1,25 @@
+{
+    "name": "mxperts/invoice",
+    "type": "magento-module",
+    "description": "Payment Method Invoice with limitation on the customer group.",
+    "homepage": "https://github.com/sreichel/magento-Mxperts-Invoice",
+    "authors": [
+        {
+            "name": "Johannes Teitge",
+            "email": "teitge@tmedia.de",
+            "homepage": "http://www.tmedia.de",
+            "role": "Author/Maintainer"
+        },
+        {
+            "name": "Igor Jankovic",
+            "email": "jankovic@tmedia.de",
+            "homepage": "http://www.tmedia.de",
+            "role": "Author/Maintainer"
+        },
+        {
+            "name": "Daniel Sasse",
+            "email": "d.sasse1984@googlemail.com",
+            "role": "Author/Maintainer"
+        }
+    ]
+}
