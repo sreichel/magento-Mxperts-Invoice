@@ -12,56 +12,52 @@
 <config>
     <global>
 
-<!-- Definition des Models/Alias - Mage::getModel('invoice/...')  -->    
+<!-- Definition des Models/Alias - Mage::getModel('invoice/...')  -->
         <models>
             <invoice>
                 <class>Mxperts_Invoice_Model</class>
-            </invoice>     
+            </invoice>
         </models>
-        
+
         <helpers>
-	        <invoice>
+            <invoice>
             <class>Mxperts_Invoice_Helper</class>
-		      </invoice>
-	      </helpers>
-        
+              </invoice>
+          </helpers>
+
         <blocks>
             <invoice>
                <class>Mxperts_Invoice_Block</class>
             </invoice>
-        </blocks>                
-        
+        </blocks>
 
 <!-- Definition der Ressourcen  -->
         <resources>
 
-<!-- Setup,Write,Read Ressourcen definbieren. (Nur Core-Funktionen) -->        
+<!-- Setup,Write,Read Ressourcen definbieren. (Nur Core-Funktionen) -->
             <invoice_setup>
                 <setup>
-<!-- Modul welches verwendet werden soll -->                
+<!-- Modul welches verwendet werden soll -->
                     <module>Mxperts_Invoice</module>
                 </setup>
                 <connection>
                     <use>core_setup</use>
                 </connection>
             </invoice_setup>
-            
+
             <invoice_write>
                 <use>core_write</use>
             </invoice_write>
-            
+
             <invoice_read>
                 <use>core_read</use>
             </invoice_read>
-            
         </resources>
-        
-        
-    </global> 
-    
-    
-<!-- Uebersetzungen -->    
-    <adminhtml>       
+
+    </global>
+
+<!-- Uebersetzungen -->
+    <adminhtml>
         <translate>
             <modules>
                 <Mxperts_Invoice>
@@ -72,8 +68,8 @@
             </modules>
         </translate>
     </adminhtml>
- 
-    <frontend>       
+
+    <frontend>
         <translate>
             <modules>
                 <Mxperts_Invoice>
@@ -82,12 +78,10 @@
                     </files>
                 </Mxperts_Invoice>
             </modules>
-        </translate>        
-    </frontend>     
-    
-       
-    
-<!-- Standardeinstellung des Moduls -->    
+        </translate>
+    </frontend>
+
+<!-- Standardeinstellung des Moduls -->
     <default>
         <payment>
             <invoice>
@@ -95,14 +89,14 @@
                 <model>invoice/invoice</model>
                 <order_status>1</order_status>
                 <title>Rechnung</title>
-               <payment_action>authorize</payment_action>       
+                <payment_action>authorize</payment_action>
                 <allowspecific>0</allowspecific>
                 <orderscount>0</orderscount>
                 <ordersamount>0</ordersamount>
                 <minamount>0</minamount>
-                <maxamount>0</maxamount>                
+                <maxamount>0</maxamount>
             </invoice>
          </payment>
     </default>
-    
+
 </config>
